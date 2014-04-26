@@ -7,8 +7,10 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<meta name="author" content="Suthat Ronglong">
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/medium-editor.css">
+    <link rel="stylesheet" href="css/medium-editor-theme-default.css">
 </head>
 <body>
     <div id="logo"><span class="fa fa-terminal fa-2x" style="margin-top: 7px;"> </span></div>
@@ -31,8 +33,8 @@
                     <p><textarea name="content" class="content" rows="1" placeholder="Write your story"></textarea></p>
                 </div>
             -->
-            <div contenteditable="true" class="container div-editor" data-placeholder='Write your story'></div>
-            <p class="plus-entity"><a><span class="fa fa-plus-circle"> </span></a></p>
+            <div class="container div-editor editable" data-placeholder="Write your story"></div>
+            <div class="plus-entity"><a class="toggle-menu"><span class="fa fa-plus-circle"> </span></a></div>
         </div>
         <div class="entity-menu">
             <ul class="menu">
@@ -45,8 +47,16 @@
     </section>
     <footer id="footer"></footer>
     
+    <script src="js/medium-editor.min.js"></script>
+    <script>
+        var editor = new MediumEditor('.editable', {
+            anchorInputPlaceholder: 'Type a link',
+            buttons: ['bold', 'italic', 'underline', 'anchor', 'unorderedlist'],
+            buttonLabels: 'fontawesome'
+        });
+    </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="jquery.elastic.js"></script>
+    <script src="js/jquery.elastic.js"></script>
     <script>
     	$(document).ready(function() {
 			$('#select-photo').on('click', function(e) {
@@ -55,14 +65,7 @@
 			});
             // TEXTAREA
 			// $('.content').elastic();
-            $('div[data-placeholder]').on('keydown keypress input', function() {
-                if(this.textContent){
-                    this.dataset.divPlaceholderContent = 'true';
-                }else{
-                    delete(this.dataset.divPlaceholderContent);
-                }
-            });
-            $('.plus-entity').on('click', function(e) {
+            $('.toggle-menu').on('click', function(e) {
                 e.preventDefault(); 
                 $('.entity-menu').fadeIn().show();
             });

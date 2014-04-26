@@ -5,11 +5,12 @@ A web content editor that clones Medium.com 's editor style UI & UX
 
 #### Opensource 
 
-* Reset5 
-* Google Fonts 
+* reset5 
+* Google fonts 
 * Font Awesome
 * Jquery
 * Jquery Elastic
+* daviferreira/medium-editor
 
 #### Author
 Suthat Ronglong

@@ -120,24 +120,19 @@ input:focus, textarea:focus {
 }
 .div-editor {
 	margin-top: 20px;
-	padding: 10px 0px;
+	padding: 0px 2px;
 	font-size: 20px;
 	font-weight: 300;
 	color: black;
-	overflow: none;
-}
-div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
-    content: attr(data-placeholder);
-    float: left;
-    margin-left: 5px;
-    color: #95a5a6;
 }
 .plus-entity {
-	cursor: pointer;
 	width: 80%;
 	margin: 5px auto;
 	font-size: 22px;
 	text-align: center;
+}
+.toggle-menu {
+	cursor: pointer;
 }
 .entity-menu {
 	display: none;
