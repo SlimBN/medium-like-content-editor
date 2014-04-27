@@ -23,7 +23,6 @@ $('.entity-menu').on('mouseleave', function(e) {
 $("#userfile").change(function(){
   preview(this);
 });
-
 function preview(userfile){
   if(userfile.files ){
     if(userfile.files[0]){
