@@ -37,6 +37,7 @@
             <div class="plus-entity"><a class="toggle-menu"><span class="fa fa-plus-circle"> </span></a></div>
         </div>
         <div class="entity-menu">
+            <div class="arrow"></div> 
             <ul class="menu">
                 <li><a><span class="fa fa-picture-o fa-2x"> </span><br>Picture</a></li>
                 <li><a><span class="fa fa-font fa-2x"> </span><br>Text</a></li>
@@ -48,30 +49,7 @@
     <footer id="footer"></footer>
     
     <script src="js/medium-editor.min.js"></script>
-    <script>
-        var editor = new MediumEditor('.editable', {
-            anchorInputPlaceholder: 'Type a link',
-            buttons: ['bold', 'italic', 'underline', 'anchor', 'unorderedlist'],
-            buttonLabels: 'fontawesome'
-        });
-    </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/jquery.elastic.js"></script>
-    <script>
-    	$(document).ready(function() {
-			$('#select-photo').on('click', function(e) {
-        		e.preventDefault(); 
-  				$('#userfile').trigger('click');
-			});
-            // TEXTAREA
-			// $('.content').elastic();
-            $('.toggle-menu').on('click', function(e) {
-                e.preventDefault(); 
-                $('.entity-menu').fadeIn().show();
-            });
-            $('.entity-menu').on('mouseleave', function(e) {
-                $('.entity-menu').fadeOut();
-            });
-		});
-    </script>
+    <script src="js/script.js"></script>
 </html>
