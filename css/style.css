@@ -1,5 +1,4 @@
 @import url(http://reset5.googlecode.com/hg/reset.min.css);
-
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 body {
@@ -19,6 +18,7 @@ body {
   background-color: black;
   color: white;
   text-align: center;
+  z-index: 100000;
 }
 
 #state {
@@ -50,7 +50,7 @@ a.nav-button:hover {
   position: relative;
   width: 100%;
   display: table;
-  height: 350px;
+  height: 400px;
   z-index: 10;
 }
 
