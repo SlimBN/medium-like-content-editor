@@ -4,27 +4,24 @@ var editor = new MediumEditor('.editable', {
   buttonLabels: 'fontawesome'
 });
 
-$(document).ready(function() {
-  $('#select-photo').on('click', function(e) {
-    e.preventDefault(); 
-    $('#userfile').trigger('click');
-  });
+$('#select-photo').on('click', function(e) {
+  e.preventDefault(); 
+  $('#userfile').trigger('click');
+});
 
-  // TEXTAREA
-  // $('.content').elastic();
+// TEXTAREA
+// $('.content').elastic();
 
-  $('.toggle-menu').on('click', function(e) {
-    e.preventDefault(); 
-    $('.entity-menu').fadeIn().show();
-  });
+$('.toggle-menu').on('click', function(e) {
+  e.preventDefault(); 
+  $('.entity-menu').fadeIn().show();
+});
+$('.entity-menu').on('mouseleave', function(e) {
+  $('.entity-menu').fadeOut();
+});
 
-  $('.entity-menu').on('mouseleave', function(e) {
-    $('.entity-menu').fadeOut();
-  });
-
-  $("#userfile").change(function(){
-    preview(this);
-  });
+$("#userfile").change(function(){
+  preview(this);
 });
 
 function preview(userfile){

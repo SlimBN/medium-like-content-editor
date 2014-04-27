@@ -60,7 +60,7 @@ a.nav-button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url();
+  background-image: url(http://wonderfulengineering.com/wp-content/uploads/2013/12/metal-wallpaper-4.jpg);
   background-position: 50% 0px;
   background-size: cover;
   -webkit-background-size: cover;
@@ -119,6 +119,16 @@ textarea.content {
 
 input:focus, textarea:focus {
   outline: 0;
+}
+
+.background--light {
+  color: black;
+}
+.background--dark {
+  color: white;
+}
+.background--complex {
+  color: green;
 }
 
 .div-editor {
