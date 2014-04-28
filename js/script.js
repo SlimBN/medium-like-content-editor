@@ -23,16 +23,40 @@ $('#select-photo').on('click', function(e) {
 });
 
 $('#userfile').change(function(){
-  preview(this);
-});
-function preview(userfile){
-  if(userfile.files ){
-    if(userfile.files[0]){
-      var fileReader = new FileReader();
-      fileReader.onload = function(e){
-        $('.background').attr('style', 'background-image:url(\'' + e.target.result + '\')');
-      }
-      fileReader.readAsDataURL(userfile.files[0]);
+  var acceptedTypes = {
+    'image/png': true,
+    'image/jpeg': true,
+    'image/gif': true
+  };  
+  if(this.files){
+    file = this.files[0];
+    if(acceptedTypes[file.type] === true){
+      preview(file);
+      upload(file);
+    }else{
+      alert('file type is not accepted');
     }
   }
+});
+function preview(userfile){
+  var fileReader = new FileReader();
+  fileReader.onload = function(e){
+    $('.background').attr('style', 'background-image:url(\'' + e.target.result + '\')');
+  }
+  fileReader.readAsDataURL(userfile);
+}
+function upload(userfile){
+  var formData = new FormData();
+  formData.append('file', userfile);
+  $.ajax({
+    type: 'post',
+    url: 'upload.php',
+    cache: false,
+    contentType: false,
+    processData: false,
+    data: formData,
+    success: function(data){
+      console.log('picture was uploaded');
+    }
+  });
 }
